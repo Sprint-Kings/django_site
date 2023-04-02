@@ -1,0 +1,136 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная</title>
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- fontawesome icon cdn -->
+		<link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.css">
+</head>
+<body>
+	<div class="container-fluid p-0" style="background-image: url(media/img/color.jpg); height: 960px; background-size: cover;">
+		<div class="container-fluid p-5"> 
+			<h1 class="text-center text_green scada" style="font-size: 40pt">Без кота и <span class="text_yellow scada">жизнь не та!</span></h1>
+		</div>
+		<div class="text-center"><img src="media/img/logo.png" alt="Логотип"></div>
+		<div class="d-flex justify-content-center p-2"> 
+			<h1 class="text-center text_yellow scada" style="font-size: 40pt">Добрые <span class="text_green scada">руки</span></h1>
+		</div>
+		<div class="d-flex justify-content-center p-5 pb-1"> 
+		<a href="shop.html" class="btn width_button rounded-pill text_white ps-2 pe-2 me-2 " style="background-color: #F8BC48; font-size: 23px">За покупками</a>
+		<a  href="error404.html" class="btn width_button rounded-pill text_white ps-2 pe-2 ms-2" style="background-color: #F8BC48; font-size: 23px">Приютить хвостика</a>
+		</div>
+		<div class="d-flex justify-content-center p-5 pt-1"> 
+			{% if user.is_anonymous %}
+					<a href="{% url 'accounts:login' %}" class="btn width_button rounded-pill text_white ps-2 pe-2 me-2" style="background-color: #F8BC48; font-size: 23px">Вход</a>
+			{% else %}
+				<a href="{% url 'accounts:logout' %}" class="btn width_button rounded-pill text_white ps-2 pe-2 me-2" style="background-color: #F8BC48; font-size: 23px">Выйти</a>
+			{% endif %}
+				<a href="error404.html" class="btn width_button rounded-pill text_white ps-2 pe-2 ms-2" style="background-color: #F8BC48; font-size: 23px">Полезные статьи</a>
+		</div>
+	</div>
+	<!-- Модальное окно -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content" style="background: none; border:none">
+				<div class="container py-5 h-100">
+					<div class="row d-flex justify-content-center align-items-center h-100">
+						<div class="container-fluid">
+							<div class="card bg-white text_yellow" style="border-radius: 1rem;">
+								<div class="card-body p-5 text-center">
+
+									<div class="pab-5 mt-md-4">
+
+										<h2 class="fw-bold mb-2 text-uppercase">Вход</h2>
+										<img src="media/img/user.png" class="pat-10 pab-10"alt="гифка">
+										<div class="form-outline form-white mb-4">
+											<input type="email" id="exampleInputEmail1" class="form-control form-control-lg" />
+											<label class="form-label" for="exampleInputEmail1">Email</label>
+										</div>
+
+										<div class="form-outline form-white mb-4">
+											<input type="password" id="typePasswordX" class="form-control form-control-lg" />
+											<label class="form-label" for="typePasswordX">Пароль</label>
+										</div>
+
+										<p class="small pab-5 pb-lg-2"><a class="text_yellow" href="#!">Забыли пароль?</a></p>
+
+										<a href="account.html" class="btn btn-outline text_yellow btn-lg px-5" style="border-color:#F8BC48" type="submit">Войти</a>
+
+										<div class="d-flex justify-content-center text-center mt-4 pab-5 pt-1">
+											<a href="#!" class="text_yellow"><i class="fab fa-facebook-f fa-lg"></i></a>
+											<a href="#!" class="text_yellow"><i class="fab fa-twitter fa-lg mx-4 px-2"></i></a>
+											<a href="#!" class="text_yellow"><i class="fab fa-google fa-lg"></i></a>
+										</div>
+
+									</div>
+
+									<div>
+										<p class="mb-0">Нет аккаунта? <a href="#!" class="text_yellow fw-bold">Регистрация</a>
+										</p>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid p-0" style="background-image: url(media/img/wild.jpg); background-repeat: round; height: 960px">
+		<div class="d-inline-flex justify-content-start bg-light p-4 mt-5" style="width:90%; border-bottom-right-radius: 40px; border-top-right-radius: 40px">
+			<h1 class="text-left text_yellow" style="font-size: 22pt">Зоомагазин добрые руки "Добрые руки" 
+			представляет высококачественные и хорошо сбалансированные корма для различных питомцев, которые являются
+			основой отменного здоровья вашего любимца. Они не только обеспечивают правильный баланс питательных
+			веществ, необходимых животному, но и избавляют Вас от необходимости готовить еду самостоятельно, и
+			при этом сладить за тем, чтобы животное получало все питательные вещества в используемых продуктах.
+			Наш магазин также является и приютом для бездомных животных, которых вы также у нас можете забрать.
+			С нами легко быть заботливым хозяином!</h1>
+		</div>
+		<div class="bg-light p-4 mat-10" style=" margin-left: 64.55%; border-bottom-left-radius: 40px; border-top-left-radius: 40px">
+			<img src="media/img/index.jpg" alt="гифка">
+		</div>
+	</div>
+	<div class="container-fluid p-0 bg-light" style="height: 960px">
+		<div class="d-inline-flex justify-content-start p-3 ps-5 mt-5" style="background-color: #F8BC48; width: 300px">
+			<h1 class="text-center text_green scada" style="font-size: 22pt">Где нас найти</h1>
+		</div>
+		<div class="container-fluid pt-5 pb-5 ps-0 pe-0 bg-light" style="height: 500px; width:100%">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d556.2525805369462!2d40.27916750883124!3d56.10504034147946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1669013675920!5m2!1sru!2sru" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+		</div>
+		<div class="content-center pt-4 pb-4" style="border-radius: 40px; background-color: #F8BC48; padding-left: 50px; padding-right: 50px; margin-left: 50px; margin-right: 50px"> 
+			<h1 class=" text_green" style="font-size: 22pt">Наш магазин находится по адресу г.Владимир мкр.Юрьевец улица Славная д.5.
+			Добраться можно на автобусах 20с, 22, 22с, 33с, остановка "Институтский городок". Время работы пн-пт с 9:00 до 20:00.</h1>
+		</div>
+		<center>
+		<img src="media/img/line.png" alt="линии" style="width: 90%; margin: 50px">
+		</center>
+		<div class="container-fluid content-center text-nowrap text_green" style="font-size: 12pt; height: 120px; padding-left: 8%; padding-right: 8%">
+			<center>
+			<img src="media/img/phone.svg" alt="линии" style="margin-right: 1%">
+			+7(999)-999-99-99
+			<a class="btn btn-primary rounded-pill btn-xs btn-floating" style="margin-left: 3%; background-color: #7F4DA0;" href="#!" role="button">
+				<i class="fab fa-viber"></i>
+			</a>
+			<a class="btn btn-primary rounded-pill btn-xs btn-floating" style="margin-left: 1%; background-color: #37AEE2;" href="#!" role="button">
+				<i class="fab fa-telegram"></i>
+			</a>
+			<a class="btn btn-primary rounded-pill btn-xs btn-floating" style="margin-left: 1%; background-color: #54CC61;" href="#!" role="button">
+				<i class="fab fa-whatsapp"></i>
+			</a>
+			<a class="btn btn-primary rounded-pill btn-xs btn-floating" style="margin-left: 1%; background-color: #4C75A3;" href="#!" role="button">
+				<i class="fab fa-vk"></i>
+			</a>
+			<img src="media/img/E-mail.svg" alt="линии" style="margin-left: 3%; margin-right: 1%">
+			dobrye_ryki@yandex.ru
+			</center>
+		</div>
+	</div>
+
+</body>
+</html>
